@@ -55,7 +55,7 @@ public class HomePage extends LocalHelper{
 	private WebElement finishButton;
 	@FindBy(xpath = "//h2[text()='Thank you for your order!']")
 	private WebElement successMessage;
-	@FindBy(xpath = "//*[contains(text(),'Username and password do not ')]")
+	@FindBy(xpath = "//*[contains(text(),'Sorry, this user has been locked out.')]")
 	private WebElement errorMessageLogin;
 
 
@@ -110,8 +110,8 @@ public class HomePage extends LocalHelper{
 	}
 
 	public boolean checkErrorMessageDuringLogin() {
-		logger.info("Trying to Enter the Username and password");
-		return getTextContent(errorMessageLogin,driver).contains("Username and password do not match");
+		logger.info("Trying to Enter the Locked username and password");
+		return getTextContent(errorMessageLogin,driver).contains("Sorry, this user has been locked out.");
 	}
 
 
