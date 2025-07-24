@@ -58,8 +58,8 @@ public class FirstTest extends BaseClass {
 	@Description("Negative Testing")
 	@Test(priority = 1)
 	public void invalidLoginScenario() {
-		homePage.sendUsername("sanfjasfn");
-		homePage.sendPassword("adsknasjdsanjkd");
+		homePage.sendUsername("locked_out_user");
+		homePage.sendPassword("secret_sauce");
 		homePage.clickLoginButton();
 		Assert.assertTrue(homePage.checkErrorMessageDuringLogin(),"Error message not appears during login");
 	}
