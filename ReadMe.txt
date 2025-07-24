@@ -45,11 +45,6 @@ Config.properties
 Contains environment-level properties like:
 
 baseUrl
-
-defaultTimeout
-
-Other config flags
-
 testng.xml
 Test Suite configuration file
 
@@ -68,34 +63,20 @@ testng_regression.xml – For regression suite execution
 
 🚀 Running Tests
 1. Using Command Line
-bash
-Copy
-Edit
 mvn clean test -DsuiteXmlFile=testng.xml
 2. Using IntelliJ/Eclipse
 Right-click on testng.xml or any test class and run as TestNG Test
 
 3. With Parameters
 Edit in testng.xml:
-
-xml
-Copy
-Edit
 <parameter name="browser" value="chrome" />
 <parameter name="username" value="standard_user" />
 <parameter name="password" value="secret_sauce" />
 🧪 Test Execution Reports
 ✅ Allure Report
-bash
-Copy
-Edit
-allure serve allure-results
-✅ Extent Report
-After execution, open:
+allure generate --clean
+allure open allure-report
 
-Copy
-Edit
-extentSpark.html
 🧩 CI/CD Support
 Available YAMLs:
 azure-pipelines.yml – For Azure DevOps integration
